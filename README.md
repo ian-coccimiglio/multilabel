@@ -14,7 +14,10 @@ Drawbacks:
 
 Maybe this project works, or maybe it will be bioimaging meets cryptography.
 
-## Suboptimal draft implementation
+Ideas for if an array exceeds the bit-limit...
+- In the label_image encoder/decoder, create a mapping such that each unique label can be transformed to a unique 32-bit integer and back again.
+
+## Draft implementation
 
 ### Label image encoding
 1) Get a list of all masks representing an image
