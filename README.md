@@ -3,10 +3,14 @@
 
 A project to see whether it is reasonable to encode/decode masks as a "2.5D" label image, specifically by factorizing primes. This was inspired by investigating novel tools in bioimaging (such as the Segment Anything Model) and chatting on the image.sc forums.
 
-Each unique mask is given a sequential prime number >1. Add the masks as before to the image, where if a pixel has a value of zero, simply add the label. But, if a pixel doesn't have a value of zero (i.e., there's a collision in 2D space), multiply their values. At the end, you'll still have a 2D label image, except a subset label-values could be prime-factored into a set of distinct and unique primes ("square-free integers").
+Each unique mask is given a sequential prime number >1. Create an empty label image of 1s. Multiply each mask together. At the end, you'll still have a 2D label image, except a subset label-values could be prime-factored into a set of distinct and unique primes ("square-free integers").
 
-Benefits: Possibly space-efficient in images with few overlaps. Able to represent any list of overlapping 2D masks in 2-dimensions. Would be easy and fast to cycle/visualize masks by dividing each pixel by each prime number and taking the modulus.
-Drawbacks: 32-bit integer images would be easily surpassed by images with many colliding masks. Pah!
+Benefits: 
+- Possibly space-efficient in images with few overlaps.
+- Theoretically able to represent any list of overlapping 2D masks in 2-dimensions.
+- Would be easy and fast to cycle/visualize masks by dividing each pixel by each prime number and taking the modulus.
+Drawbacks:
+- 32-bit integer images would be easily surpassed by images with many colliding masks. Pah!
 
 Maybe this project works, or maybe it will be bioimaging meets cryptography.
 
