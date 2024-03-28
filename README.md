@@ -18,8 +18,8 @@ Maybe this project works, or maybe it will be bioimaging meets cryptography.
 3) Multiply each mask together element-wise.
 
 ### Label image decoding
-1) To view any particular mask, divide the mask by a prime number `n`. 
-2) All overlapping masks will be a number `P` (technically a square-free integer). `P` mod `n` will be 1 iff the `n` is a prime factor of `P`.
+1) To view any particular mask, divide the label image by a prime number `n`. 
+2) All overlapping masks will be a number `P` (technically a square-free integer). `P` mod `n` will be 0 iff the `n` is a prime factor of `P`.
 3) In the case `n` == `P`, then `P` is prime and therefore the mask has no overlaps.
 4) For any mask, we can use `P mod n` to generate the binary mask for label `n`.
 5) We can iterate this for all prime numbers up to the number of different masks in the image.
